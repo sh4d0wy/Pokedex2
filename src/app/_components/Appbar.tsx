@@ -49,14 +49,14 @@ function HeadBar() {
       <Container maxWidth="sm">
         <Toolbar disableGutters>
           <CatchingPokemonIcon
-            sx={{ display: { xs: "none", md: "flex" }, mr: 1 }}
+            sx={{ display: { xs: "none", sm: "flex" }, mr: 1 }}
           />
           <Typography
             variant="h6"
             noWrap
             sx={{
               mr: 4,
-              display: { xs: "none", md: "flex" },
+              display: { xs: "none", sm: "flex" },
               fontFamily: "monospace",
               fontSize: "2rem",
               fontWeight: 700,
@@ -68,7 +68,7 @@ function HeadBar() {
             PokeDex
           </Typography>
 
-          <Box sx={{ flexGrow: 1, display: { xs: "flex", sm: "none" } }}>
+          <Box sx={{ flexGrow: 1, display: { xs: "flex", sm: "none" } ,alignItems:"center",width:"70%"}}>
             <IconButton
               size="large"
               aria-label="account of current user"
@@ -96,7 +96,7 @@ function HeadBar() {
               open={Boolean(anchorElNav)}
               onClose={handleCloseNavMenu}
               sx={{
-                display: { xs: "block", md: "none" },
+                display: { xs: "block", sm: "none" },
               }}
             >
               {pages.map((page,index) => (
@@ -115,14 +115,14 @@ function HeadBar() {
             m:0
           }}>
           <CatchingPokemonIcon
-            sx={{ display: { xs: "flex", md: "none" }, mr: 1 }}
+            sx={{ display: { xs: "flex", sm: "none" }, mr: 1 }}
           />
           <Typography
-            variant="h5"
+            variant="h6"
             noWrap
             sx={{
               mr: 2,
-              display: { xs: "flex", md: "none" },
+              display: { xs: "flex", sm: "none" },
               flexGrow: 1,
               fontFamily: "monospace",
               fontWeight: 700,
@@ -148,6 +148,7 @@ function HeadBar() {
                   fontSize: 15,
                   fontFamily: "Roboto",
                   fontWeight: "600",
+                  width:"max-content"
                 }}
               >
                 {page}

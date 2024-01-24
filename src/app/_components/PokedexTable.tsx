@@ -30,10 +30,10 @@ export const PokedexTable:React.FC<PokemonList> = ({pokemons}) => {
         maxWidth:"90vw",
         py:5
       }}>
-        {pokemons.map((pokemon) => {
+        {pokemons.map((pokemon,index) => {
           return (
             <>
-              <PokemonRow {...pokemon}/>
+              <PokemonRow key={index} {...pokemon}/>
             </>
           );
         })}

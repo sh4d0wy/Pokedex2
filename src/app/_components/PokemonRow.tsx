@@ -101,6 +101,7 @@ export const PokemonRow = (props:Pokemon) => {
             return (
               <>
                 <Typography
+                  key={type}
                   variant="body2"
                   sx={{
                     backgroundColor:color,
