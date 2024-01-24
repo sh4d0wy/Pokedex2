@@ -44,6 +44,9 @@ function HeadBar() {
         backgroundColor: "white",
         color: "#ff7961",
         boxShadow: "2px 2px 10px #0000003c",
+        display:"flex",
+        justifyContent:"center",
+        gap:1
       }}
     >
       <Container maxWidth="sm">
@@ -55,10 +58,13 @@ function HeadBar() {
             variant="h6"
             noWrap
             sx={{
-              mr: 4,
+              mr:2,
               display: { xs: "none", sm: "flex" },
               fontFamily: "monospace",
-              fontSize: "2rem",
+              fontSize: {
+                md:"2rem",
+                sm:"1.5rem"
+              },
               fontWeight: 700,
               letterSpacing: ".3rem",
               color: "inherit",
@@ -148,7 +154,6 @@ function HeadBar() {
                   fontSize: 15,
                   fontFamily: "Roboto",
                   fontWeight: "600",
-                  width:"max-content"
                 }}
               >
                 {page}
