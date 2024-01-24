@@ -1,14 +1,11 @@
-import { api } from "~/trpc/server";
-import { PokedexTable } from "./_components/PokedexTable";
+import Getall from "./_components/Getall";
 
 export default async function Home() {
-  let data1 = await api.pokemon.getAllPokemons.query();
-  return ( 
+
+  return (
     <>
-    {data1 &&
-      <PokedexTable pokemons={data1}/>
-    }
+      <Getall/>
     </>
-  );
+  )
 }
 

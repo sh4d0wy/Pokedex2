@@ -37,8 +37,9 @@ function HeadBar() {
     <AppBar
       position="static"
       sx={{
-        width: "70vw",
+        width: "75vw",
         my: 5,
+        pr:2,
         borderRadius: 5,
         backgroundColor: "white",
         color: "#ff7961",
@@ -67,7 +68,7 @@ function HeadBar() {
             PokeDex
           </Typography>
 
-          <Box sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}>
+          <Box sx={{ flexGrow: 1, display: { xs: "flex", sm: "none" } }}>
             <IconButton
               size="large"
               aria-label="account of current user"
@@ -98,11 +99,11 @@ function HeadBar() {
                 display: { xs: "block", md: "none" },
               }}
             >
-              {pages.map((page) => (
+              {pages.map((page,index) => (
                 <MenuItem key={page} onClick={handleCloseNavMenu}>
-                  <Typography textAlign="center" sx={{ color: "black" }}>
+                  <Button href={links[index]} sx={{ color: "black" }}>
                     {page}
-                  </Typography>
+                  </Button>
                 </MenuItem>
               ))}
             </Menu>
@@ -110,6 +111,8 @@ function HeadBar() {
           <Link href="/" alignItems="center"sx={{
             textDecoration:"none",
             color:"inherit",
+            display:"flex",
+            m:0
           }}>
           <CatchingPokemonIcon
             sx={{ display: { xs: "flex", md: "none" }, mr: 1 }}
@@ -131,7 +134,7 @@ function HeadBar() {
             PokeDex
           </Typography>
           </Link>
-          <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}>
+          <Box sx={{ flexGrow: 1, display: { xs: "none", sm: "flex" } }}>
             {pages.map((page, index) => (
               <Button
                 key={page}

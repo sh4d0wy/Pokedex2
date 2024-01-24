@@ -6,11 +6,12 @@ import { PokedexTable } from './PokedexTable'
 
 const FilterablePokedexTable = () => {
     const [selectedType,setSelectType] = useState<string|undefined>("")
-    let {data,refetch} = api.pokemon.getPokemonsByType.useQuery(selectedType? selectedType:"");
+    const {data,refetch} = api.pokemon.getPokemonsByType.useQuery(selectedType? selectedType:"");
 
     if(selectedType && selectedType.length>0){
-        console.log(selectedType);
-        refetch();
+        refetch().catch((e:React.ErrorInfo)=>{
+          console.log("Some error occured ",e);
+        });
     }
   return (
     <>
